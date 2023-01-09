@@ -1,0 +1,138 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*Reset & root*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-white: #fff;
+    --color-body-bg-color: #e7ecef;
+    --color-text-color: #274c77;
+    --color-gray-dark: #6096ba;
+    --color-gray-light: #a3cef1;
+    --color-box-shadow: rgba(0, 0, 0, .1);
+    
+    --font-main: 'Poppins', sans-serif;
+
+    --fs-xl: 3rem;
+    --fs-600: 1.8rem;
+    --fs-500: 1.2rem;
+    --fs-400: 1rem;
+}
+html, body{
+    min-height: 100vh;
+    width: 100%;
+}
+body, input, textarea, a{
+    color: var(--color-text-color);
+    font-family: var(--font-main);
+}
+body{
+    position: relative;
+    background: var(--color-body-bg-color);
+    font-size: 16px;
+    line-height: 1;
+}
+#body-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/*Custom resets*/
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+}
+::-moz-selection {
+    color: var(--color-white);
+    background: var(--color-text-color)
+}
+  
+::selection {
+    color: var(--color-white);
+    background: var(--color-text-color)
+}
+::placeholder{
+    color: var(--color-text-color);
+    opacity: .5;
+}
+
+
+/* Main Content */
+#logo{
+    height: 150px;
+}
+
+header h1{
+    font-size: var(--fs-xl);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    min-height: 200px;
+    height: fit-content;
+    padding: 20px;
+    background-color: var(--color-gray-dark);
+    box-shadow: 0 0 20px 0 var(--color-box-shadow);
+}
+textarea{
+    appearance: none;
+    width: 100%;
+    padding: 5px;
+    background-color: var(--color-gray-light);
+    border-radius: 5px;
+    border: none;
+    resize: vertical;
+}
+input[type='button']{
+    appearance: none;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 40px;
+    font-size: var(--fs-500);
+    transition: .3s ease-out;
+    background-color: var(--color-body-bg-color);
+    cursor: pointer;
+}
+input[type='button']:hover{
+    background-color: var(--color-text-color);
+    color: var(--color-body-bg-color);
+}
+input[type='button']:active{
+    background-color: var(--color-body-bg-color);  
+    color: var(--color-text-color);
+}
+#copy-pop{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: var(--color-gray-dark);
+    color: var(--color-body-bg-color);
+    padding: 10px;
+    border-radius: 5px;
+    transform: translateY(150%);
+    transition: transform .3s ease-out;
+}
+#copy-pop.active{
+    transform: translateY(0);
+}
